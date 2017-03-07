@@ -1,0 +1,19 @@
+{
+  "name": "graphql-relay-todo",
+  "version": "1.0.0",
+  "description": "에디켓 스택에 적응하기 위한 TODO MVC 개발.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifndefdeadmau5/graphql-relay-todo.git"
+  },
+  "author": "trevor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifndefdeadmau5/graphql-relay-todo/issues"
+  },
+  "homepage": "https://github.com/ifndefdeadmau5/graphql-relay-todo#readme"
+}

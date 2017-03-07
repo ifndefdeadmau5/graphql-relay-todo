@@ -8,15 +8,15 @@
 
 ## 사용해야하는 스택들
 - React
-- Babel
-- Webpack
-- (WebpackDevServer)
-- React-Router
-- Graphql
-- Express
-- Graphql-relay
 - (Material-ui)
-- CSS Module + PostCSS
+- React-Router 4
+- Graphql
+- Graphql-relay
+- Webpack
+- Express
+- CSS Module + PostCSS/
+- (WebpackDevServer)
+- Babel
 
 ## 참고자료
 - http://todomvc.com/examples/react/#/
