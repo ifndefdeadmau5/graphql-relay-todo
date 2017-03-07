@@ -1,9 +1,10 @@
+import TextField from 'material-ui/TextField';
 import React from 'react';
 import styles from './App.css';
 
 const App = () => (
   <div className={styles.app}>
-    <h2>Ediket</h2>
+    <TextField value="Hello World" />
   </div>
 );
 
