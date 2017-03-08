@@ -7,17 +7,17 @@
 - TODO 지우기
 
 ## 사용해야하는 스택들
-- React
-- (Material-ui)
-- React-Router 4
+- ~~React~~
+- ~~(Material-ui)~~
+- ~~React-Router 4~~
 - Test (jest)
 - Graphql
 - Graphql-relay
-- Webpack
+- ~~Webpack~~
 - Express
 - CSS Module + PostCSS/
-- (WebpackDevServer)
-- Babel
+- ~~(WebpackDevServer)~~
+- ~~Babel~~
 
 ## 참고자료
 - http://todomvc.com/examples/react/#/
