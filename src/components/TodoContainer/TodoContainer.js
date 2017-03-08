@@ -28,7 +28,6 @@ export default class TodoContainer extends Component {
       todos: [...this.state.todos, nextTodo],
       index: this.state.index + 1,
     });
-
   }
 
   removeTodo = (key) => {
@@ -41,7 +40,7 @@ export default class TodoContainer extends Component {
   render() {
     return (
       <div>
-        <h1>TodoList</h1>
+        <h1>{this.props.match.params.property} TodoList</h1>
         <TextField
           onKeyDown={(event) => {
             if (event.keyCode === 13) {

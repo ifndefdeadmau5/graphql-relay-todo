@@ -1,16 +1,30 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+} from 'react-router-dom';
 import styles from './App.css';
 import Header from '../Header/Header';
 import TodoContainer from '../TodoContainer/TodoContainer';
 import Footer from '../Footer/Footer';
 
-
 const App = () => (
-  <div className={styles.app}>
-    <Header />
-    <TodoContainer />
-    <Footer />
-  </div>
+  <Router>
+    <div className={styles.app}>
+      <Header />
+      <Route
+        path="/:property"
+        component={TodoContainer}
+      />
+      <ul>
+        <li><Link to={'/all'}>all</Link></li>
+        <li><Link to={'/active'}>active</Link></li>
+        <li><Link to={'/completed'}>completed</Link></li>
+      </ul>
+      <Footer />
+    </div>
+  </Router>
 );
 
 export default App;
