@@ -1,22 +1,40 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import TodoList from '../TodoList/TodoList';
 
 export default class TodoContainer extends Component {
   constructor(props) {
     super(props);
-    this.todos = [];
-    this.todo = null;
+    this.state = {
+      todos: [],
+      todo: '',
+      index: 0,
+    };
   }
 
-  updateMessage = (event) => {
+  updateTodoText = (event) => {
     this.setState({
       todo: event.target.value,
     });
   }
 
-  submitMessage = () => {
+  addTodo = () => {
+    const nextTodo = {
+      id: this.state.index,
+      text: this.state.todo,
+    };
+
     this.setState({
-      todos: [...this.state.todos, this.state.todo],
+      todos: [...this.state.todos, nextTodo],
+      index: this.state.index + 1,
+    });
+
+  }
+
+  removeTodo = (key) => {
+    console.log('here');
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== key),
     });
   }
 
@@ -27,10 +45,14 @@ export default class TodoContainer extends Component {
         <TextField
           onKeyDown={(event) => {
             if (event.keyCode === 13) {
-              this.submitMessage();
+              this.addTodo();
             }
           }}
-          onChange={this.updateMessage}
+          onChange={this.updateTodoText}
+        />
+        <TodoList
+          messages={this.state.todos}
+          removeTodo={this.removeTodo}
         />
       </div>
     );
