@@ -22,6 +22,7 @@ export default class TodoContainer extends Component {
     const nextTodo = {
       id: this.state.index,
       text: this.state.todo,
+      done: false,
     };
 
     this.setState({
@@ -31,9 +32,24 @@ export default class TodoContainer extends Component {
   }
 
   removeTodo = (key) => {
-    console.log('here');
     this.setState({
       todos: this.state.todos.filter(todo => todo.id !== key),
+    });
+  }
+
+  toggleTodo = (key) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (key === todo.id) {
+          return {
+            id: todo.id,
+            text: todo.text,
+            done: !todo.done,
+          };
+        }
+
+        return todo;
+      }),
     });
   }
 
@@ -52,6 +68,7 @@ export default class TodoContainer extends Component {
         <TodoList
           messages={this.state.todos}
           removeTodo={this.removeTodo}
+          toggleTodo={this.toggleTodo}
         />
       </div>
     );
