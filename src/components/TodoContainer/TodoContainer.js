@@ -66,7 +66,16 @@ export default class TodoContainer extends Component {
           onChange={this.updateTodoText}
         />
         <TodoList
-          messages={this.state.todos}
+          messages={this.state.todos.filter((todo) => {
+            switch (this.props.match.params.property) {
+              case 'active':
+                return todo.done === false;
+              case 'completed':
+                return todo.done === true;
+              default:
+                return true;
+            }
+          })}
           removeTodo={this.removeTodo}
           toggleTodo={this.toggleTodo}
         />
