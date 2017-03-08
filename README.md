@@ -10,6 +10,7 @@
 - React
 - (Material-ui)
 - React-Router 4
+- Test (jest)
 - Graphql
 - Graphql-relay
 - Webpack
