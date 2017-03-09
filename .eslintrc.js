@@ -12,6 +12,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/no-find-dom-node': 'off',
     'react/prefer-stateless-function': 'off',
+    'react/forbid-prop-types': 'off',
     'class-methods-use-this': 'off',
   },
 };

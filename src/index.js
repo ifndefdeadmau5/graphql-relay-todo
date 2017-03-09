@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { AppContainer } from 'react-hot-loader';
 // AppContainer is a necessary wrapper component for HMR
 
-import App from './components/App/App.js';
+import App from './components/App';
 
 const render = (Component) => {
   ReactDOM.render(

@@ -14,7 +14,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    './index.js'
+    './index.js',
     // the entry point of our app
   ],
   output: {
@@ -23,7 +23,7 @@ module.exports = {
 
     path: resolve(__dirname, 'dist'),
 
-    publicPath: '/'
+    publicPath: '/',
     // necessary for HMR to know where to load the hot update chunks
   },
 
@@ -38,7 +38,7 @@ module.exports = {
     contentBase: resolve(__dirname, 'dist'),
     // match the output path
 
-    publicPath: '/'
+    publicPath: '/',
     // match the output `publicPath`
   },
 
@@ -49,7 +49,7 @@ module.exports = {
         use: [
           'babel-loader',
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,

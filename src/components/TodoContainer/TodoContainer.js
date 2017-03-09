@@ -3,6 +3,10 @@ import TextField from 'material-ui/TextField';
 import TodoList from '../TodoList/TodoList';
 
 export default class TodoContainer extends Component {
+  static propTypes = {
+    match: React.PropTypes.object.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -54,9 +58,10 @@ export default class TodoContainer extends Component {
   }
 
   render() {
+    const { params } = this.props.match;
     return (
       <div>
-        <h1>{this.props.match.params.property} TodoList</h1>
+        <h1>{params.property} TodoList</h1>
         <TextField
           onKeyDown={(event) => {
             if (event.keyCode === 13) {
@@ -67,7 +72,7 @@ export default class TodoContainer extends Component {
         />
         <TodoList
           messages={this.state.todos.filter((todo) => {
-            switch (this.props.match.params.property) {
+            switch (params.property) {
               case 'active':
                 return todo.done === false;
               case 'completed':
