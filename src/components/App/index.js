@@ -5,9 +5,9 @@ import {
   Link,
 } from 'react-router-dom';
 import styles from './App.css';
-import Header from '../Header/Header';
-import TodoContainer from '../TodoContainer/TodoContainer';
-import Footer from '../Footer/Footer';
+import Header from '../Header';
+import TodoContainer from '../TodoContainer';
+import Footer from '../Footer';
 
 const App = () => (
   <Router>
