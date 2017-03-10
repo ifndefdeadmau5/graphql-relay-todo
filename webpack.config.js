@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -18,7 +19,7 @@ module.exports = {
     // the entry point of our app
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'index_bundle.js',
     // the output bundle
 
     path: resolve(__dirname, 'dist'),
@@ -68,5 +69,9 @@ module.exports = {
 
     new webpack.NamedModulesPlugin(),
     // prints more readable module names in the browser console on HMR updates
+
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
   ],
 };
