@@ -61,8 +61,8 @@ export default class TodoContainer extends Component {
     const { params } = this.props.match;
     return (
       <div>
-        <h1>{params.property} TodoList</h1>
         <TextField
+          label="What needs to be done?"
           onKeyDown={(event) => {
             if (event.keyCode === 13) {
               this.addTodo();

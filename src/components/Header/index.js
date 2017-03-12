@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import injectSheet from 'react-jss';
+import styles from './style';
 
-const Header = () => (
-  <h1>Header</h1>
-);
+@injectSheet(styles)
+class Header extends Component {
+  render() {
+    const { classes } = this.props;
+    return (
+      <h1 className={classes.h1}>todos</h1>
+    )
+  }
+}
 
 export default Header;

@@ -17,8 +17,7 @@ const TodoList = props => (
             checked={message.done}
           />
           <ListItemText
-            primary={`${message.text} ${message.done ?
-              'Completed' : 'Active'}`}
+            primary={`${message.text}`}
           />
           <Button onClick={() => props.removeTodo(message.id)}>
             Delete

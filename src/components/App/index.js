@@ -12,17 +12,19 @@ import Footer from '../Footer';
 const App = () => (
   <Router>
     <div className={styles.app}>
-      <Header />
-      <Route
-        path="/:property"
-        component={TodoContainer}
-      />
-      <ul>
-        <li><Link to={'/all'}>all</Link></li>
-        <li><Link to={'/active'}>active</Link></li>
-        <li><Link to={'/completed'}>completed</Link></li>
-      </ul>
-      <Footer />
+      <div className={styles.container}>
+        <Header />
+        <Route
+          path="/:property"
+          component={TodoContainer}
+        />
+        <ul>
+          <li><Link to={'/all'}>all</Link></li>
+          <li><Link to={'/active'}>active</Link></li>
+          <li><Link to={'/completed'}>completed</Link></li>
+        </ul>
+        <Footer />
+      </div>
     </div>
   </Router>
 );
