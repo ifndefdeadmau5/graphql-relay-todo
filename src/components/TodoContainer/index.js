@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Relay from 'react-relay';
 import TextField from 'material-ui/TextField';
 import TodoList from '../TodoList/index';
 
-export default class TodoContainer extends Component {
+class TodoContainer extends Component {
   static propTypes = {
-    match: React.PropTypes.object.isRequired,
+    params: React.PropTypes.object.isRequired,
+    viewer: React.PropTypes.object,
   };
 
   constructor(props) {
@@ -14,6 +16,8 @@ export default class TodoContainer extends Component {
       todo: '',
       index: 0,
     };
+
+    console.log(props)
   }
 
   updateTodoText = (event) => {
@@ -58,7 +62,7 @@ export default class TodoContainer extends Component {
   }
 
   render() {
-    const { params } = this.props.match;
+    const { params } = this.props;
     return (
       <div>
         <TextField
@@ -70,6 +74,9 @@ export default class TodoContainer extends Component {
           }}
           onChange={this.updateTodoText}
         />
+        <p>
+          {`Your viewer id is: ${this.props.viewer.id}`}
+        </p>
         <TodoList
           messages={this.state.todos.filter((todo) => {
             switch (params.property) {
@@ -88,3 +95,16 @@ export default class TodoContainer extends Component {
     );
   }
 }
+
+export default Relay.createContainer(
+  TodoContainer,
+  {
+    fragments: {
+      viewer: () => Relay.QL`
+          fragment on Viewer{
+              id
+          }
+      `,
+    },
+  },
+);

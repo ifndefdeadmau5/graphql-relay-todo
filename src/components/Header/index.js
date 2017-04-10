@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <h1 className={classes.h1}>todos</h1>
+      <h1 className={classes.h1}>relay todos</h1>
     )
   }
 }
